@@ -1,2 +1,24 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿/*Задача 8: Напишите программу, которая на вход принимает число (N), 
+а на выходе показывает все чётные числа от 1 до N.
+5 -> 2, 4
+8 -> 2, 4, 6, 8
+*/
+
+Console.Write("Введите число: ");
+int Num = Convert.ToInt32(Console.ReadLine());     
+
+if (Num > 0)                                                                         //Проверка отрицательности
+{
+    Console.Write($"{Num} -> ");
+    for (int index = 1; index <= Num; index++)                                       //Условие вхождения в цикл: от единицы и пока не равен числу
+    {
+    if (index % 2 == 0)                                                              //Условие чётности
+        {
+            if (index != Num && index != Num - 1) Console.Write($"{index}, ");       //Вывод четных чисел через запятую
+            else Console.Write($"{index} ");                                        //Вывод последнего/предпоследнего чётного числа без запятой
+                                                                                        
+        }
+     
+    }
+}
+else Console.WriteLine("Число отрицательно");
