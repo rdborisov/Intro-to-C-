@@ -13,10 +13,9 @@ void Launch()
     {
         int DigitOne = Num / 100;
         int DigitTwo = Num % 10;
-        string NumIn = $"{DigitOne}{DigitTwo}"; // Реализовать более красиво!!!!
-        int NumOutTwoDigit = Convert.ToInt32(NumIn);
-
+        int NumOutTwoDigit = Convert.ToInt32($"{DigitOne}{DigitTwo}");
         Console.WriteLine($"{Num} -> {NumOutTwoDigit}");
+        
     }
     else Console.WriteLine("Число не 3-х значное");
 }
