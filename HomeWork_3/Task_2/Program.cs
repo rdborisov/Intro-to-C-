@@ -27,7 +27,6 @@ void PrintArr(int[] ArrA)
 {
     for (int i = 0; i < ArrA.Length; i++)
     {
-        
         if (i == ArrA.Length - 1) Console.Write($"{ArrA[i]}");
         else Console.Write($"{ArrA[i]}, ");
     }
@@ -46,11 +45,16 @@ void Mathematic(int[] ArrA, int[] ArrB)
     Console.Write($"Dist: {Dist:f2}");
 }
 
-FillArray(dotA, dotB);
-Console.Write("A(");
-PrintArr(dotA);
-Console.Write(") ");
-Console.Write("B(");
-PrintArr(dotB);
-Console.Write(") -> ");
+void OutputTask()   //Жуткая жуть, но у меня не вышло преобразовать void в string, пришлось писать так )
+{
+    Console.Write($"A(");
+    PrintArr(dotA);
+    Console.Write("); ");
+    Console.Write("B(");
+    PrintArr(dotB);
+    Console.Write(") -> ");
+}
+
+FillArray(dotA, dotB); 
+OutputTask();
 Mathematic(dotA, dotB);
