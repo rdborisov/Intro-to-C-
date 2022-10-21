@@ -13,7 +13,7 @@ void Launch()
     {
         int DigitOne = Num / 100;
         int DigitTwo = Num % 10;
-        int NumOutTwoDigit = Convert.ToInt32($"{DigitOne}{DigitTwo}");
+        int NumOutTwoDigit = DigitOne * 10 + DigitTwo;
         Console.WriteLine($"{Num} -> {NumOutTwoDigit}");
         
     }
