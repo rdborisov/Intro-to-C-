@@ -45,7 +45,7 @@ void Mathematic(int[] ArrA, int[] ArrB)
     Console.Write($"Dist: {Dist:f2}");
 }
 
-void OutputTask()   //Жуткая жуть, но у меня не вышло преобразовать void в string, пришлось писать так )
+void OutputTask() 
 {
     Console.Write($"A(");
     PrintArr(dotA);
