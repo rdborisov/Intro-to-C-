@@ -2,33 +2,36 @@
 3, 5 -> 243 (3⁵)
 2, 4 -> 16
 */
-
-using System;
-using Microsoft.VisualBasic;
-using System.Windows;
-
 class HW4t1
 {
     static void Main()
     {
-        int Input(string message)
+        double Input(string message)
         {
             Console.Write(message);
-            return int.Parse(Console.ReadLine());     
+            return Convert.ToDouble(Console.ReadLine());     
         }
 
-        int A = Input("Введите число А: ");
-        int B = Input("Введите число B: ");
-        int BasicCalc(int A, int B)
+        double A = Input("Input A: ");
+        double B = Input("Input B: ");       
+            
+        double Power(double A, double B)
         {
-            int GradeB = A;
-            for (int i = B; i > 1; i--)
+            double GradeB = A;
+            if (B == 0) return GradeB = 1;
+            else if (B > 1)
             {
-                 GradeB *= A;
+                for (; B - 1 > 0; B--) GradeB *= A;
+                return GradeB;
+            }
+            else if (B < 0) 
+            {
+                for(; B + 1 < 0; B++) GradeB *= A;
+                return GradeB = 1 / GradeB;
             }
             return GradeB;
         }
-        Console.WriteLine($"{A}, {B} -> {BasicCalc(A, B)}");
 
+        Console.WriteLine($"{A}, {B} -> {Power(A,B)}");
     }
 }
