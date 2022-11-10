@@ -13,7 +13,13 @@ class H4T2
             Console.Write(message);
             return int.Parse(Console.ReadLine());
         }
-
+        
+        int ValidateNumber(int Input)
+        {
+            if (Input < 0) Input *= -1;
+            return Input;
+        }
+        
         int SumNum(int Num)
         {
             int Sum = 0;
@@ -29,7 +35,7 @@ class H4T2
         void Output()
         {
             Console.Clear();
-            int Num = Input("Input Num: ");
+            int Num = ValidateNumber(Input("Input Num: "));
             Console.WriteLine($"{Num} -> {SumNum(Num)}");
         }
         
