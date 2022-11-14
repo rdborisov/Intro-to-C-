@@ -31,7 +31,7 @@ class HW4t1
             }
             return GradeB;
         }
-
+        
         Console.WriteLine($"{A}, {B} -> {Power(A,B)}");
     }
 }
