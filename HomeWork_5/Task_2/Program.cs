@@ -1,6 +1,7 @@
-﻿/*Задача 1: Задайте массив заполненный случайными положительными трёхзначными числами. 
-Напишите программу, которая покажет количество чётных чисел в массиве.
-[345, 897, 568, 234] -> 2
+﻿/*Задача 2: Задайте одномерный массив, заполненный случайными числами. 
+Найдите сумму элементов, стоящих на нечётных позициях.
+[3, 7, 23, 12] -> 19\
+[-4, -6, 89, 6] -> 0
 */
 class H5T1
 {
@@ -11,7 +12,7 @@ class H5T1
             int[] Array = new int[Length];
             for(int i = 0; i < Array.Length; i++)
             {
-                Array[i] = new Random().Next(100,1000);
+                Array[i] = new Random().Next(-99,100);
             }
             return Array;
         }
@@ -34,17 +35,7 @@ class H5T1
             return count;
         }
 
-        void Output()
-        {
-            int Length = 5;
-            int[] Array = CreateArr(Length);
-            int EvenCount = FindEvenNum(Array);
-            Console.Write($"[ ");
-            PrintArr(Array);
-            Console.Write($"] -> {EvenCount}");
-        }
 
-        Output();
     }
-}
 
+}
