@@ -3,7 +3,7 @@
 [3, 7, 23, 12] -> 19\
 [-4, -6, 89, 6] -> 0
 */
-class H5T1
+class H5T2
 {
     public static void Main()
     {
