@@ -12,7 +12,7 @@ class H5T1
             int[] Array = new int[Length];
             for(int i = 0; i < Array.Length; i++)
             {
-                Array[i] = new Random().Next(-99,100);
+                Array[i] = new Random().Next(-100,101);
             }
             return Array;
         }
@@ -25,17 +25,26 @@ class H5T1
             }
         }
 
-        int FindEvenNum(int[] Array)
+        int SumOfOddPos(int[] Array)
         {
-            int count = 0;
-            for (int i = 0; i < Array.Length; i++)
+            int Sum = 0;
+            for (int i = 1; i < Array.Length; i += 2)
             {
-                if (Array[i] % 2 == 0) count++;
+                Sum += Array[i];
             }
-            return count;
+            return Sum;
         }
 
-
+        void Output()
+        {
+            int Length = 256;
+            int[] Array = CreateArr(Length);
+            PrintArr(Array);
+            int SumOdd = SumOfOddPos(Array);
+            Console.WriteLine("");
+            Console.WriteLine($"{SumOdd}");
+        }
+        Output();
     }
 
 }
