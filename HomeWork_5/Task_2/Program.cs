@@ -37,7 +37,7 @@ class H5T1
 
         void Output()
         {
-            int Length = 256;
+            int Length = 10;
             int[] Array = CreateArr(Length);
             PrintArr(Array);
             int SumOdd = SumOfOddPos(Array);
