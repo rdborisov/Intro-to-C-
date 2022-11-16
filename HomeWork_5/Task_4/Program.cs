@@ -24,7 +24,7 @@ class H5T4
                     sum += i;
                     j = i;
                 }
-                Console.Write(RecSeqNum(--n) + 0 + j);
+                Console.Write(RecSeqNum(--n) + j);
                 return 0;
             }
 
