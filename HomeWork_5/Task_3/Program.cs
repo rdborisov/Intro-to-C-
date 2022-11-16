@@ -7,19 +7,19 @@ class H5T3
 {
     public static void Main()
     {
-        int[] CreateArr(int Length)
+        double[] CreateArr(int Length)
         {
-            int[] Array = new int[Length];
+            double[] Array = new double[Length];
             for(int i = 0; i < Array.Length; i++)
             {
-                Array[i] = new Random().Next(0,100);
+                Array[i] = new Random().NextDouble() * 10;
             }
             return Array;
         }
 
-        static void PrintArr(int[] Array, int i)
+        static void PrintArr(double[] Array, int i)
         {
-            Console.Write($"{Array[i]} ");
+            Console.Write($"{Array[i]:f2} ");
             if (i == Array.Length - 1){
                 Console.WriteLine();
             }
@@ -28,14 +28,14 @@ class H5T3
             }
         }
 
-        int DiffMinMax(int[] Array)
+        double DiffMinMax(double[] Array)
         {
-            int FindMin(int[] Array, int Min, int i = 0)
+            double FindMin(double[] Array, double Min, int i = 0)
             {
                 if (i >= Array.Length) return Min;
                 return FindMin(Array, Min > Array[i] ? Array[i] : Min, i + 1);
             }
-            int FindMax(int[] Array, int Max, int i = 0)
+            double FindMax(double[] Array, double Max, int i = 0)
             {
                 if (i >= Array.Length) return Max;
                 return FindMax(Array, Max < Array[i] ? Array[i] : Max, i + 1);
@@ -47,9 +47,9 @@ class H5T3
         void Output()
         {
             int Length = 8;
-            int[] Array = CreateArr(Length);
+            double[] Array = CreateArr(Length);
             PrintArr(Array, 0);
-            Console.WriteLine($"-> {DiffMinMax(Array)}");
+            Console.WriteLine($"-> {DiffMinMax(Array):f2}");
            
         }
         Output();
