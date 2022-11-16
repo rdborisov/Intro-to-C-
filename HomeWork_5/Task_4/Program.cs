@@ -8,27 +8,28 @@ class H5T4
 {
     public static void Main()
     {
-        /*int Input(string message)
+        int RecSeqNum(int n)
         {
-            Console.Write(message);
-            return int.Parse(Console.ReadLine());
-        }*/
-
-        void RecSeqNum(int Num)
-        {
-            for (int i = 1; i <= Num; i++)
+            int sum = 0;
+            int j = 0;
+            if (n == 1)
             {
-                for (int j = 1; j <= i; j++)
-                {
-                    Console.Write($"{i} ");
-                }
+                Console.Write(1);
+                return 0;
             }
-            
+            else
+            {
+                for (int i = 1; sum < n; i++)
+                {
+                    sum += i;
+                    j = i;
+                }
+                Console.Write(RecSeqNum(--n) + 0 + j);
+                return 0;
+            }
+
         }
-        void Output()
-        {
-            RecSeqNum(6);
-        }
-        Output();
+
+        RecSeqNum(12);
     }
 }
