@@ -10,16 +10,16 @@ class H5T2
         int[] CreateArr(int Length)
         {
             int[] Array = new int[Length];
-            for(int i = 0; i < Array.Length; i++)
+            for (int i = 0; i < Array.Length; i++)
             {
-                Array[i] = new Random().Next(-100,101);
+                Array[i] = new Random().Next(-100, 101);
             }
             return Array;
         }
 
         void PrintArr(int[] Array)
         {
-            for(int i = 0; i < Array.Length; i++)
+            for (int i = 0; i < Array.Length; i++)
             {
                 Console.Write($"{Array[i]} ");
             }
