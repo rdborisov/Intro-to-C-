@@ -15,7 +15,6 @@ class H6T1
         int[] UserInputArray(string message) 
             {
                 Console.Write(message);
-
                 char[] SplitChar= new char[]{' '}; // Массив символов разделителей
 
                 return Array.ConvertAll(Console.ReadLine().Split(SplitChar, 
