@@ -1,4 +1,4 @@
-﻿/*
+/*
 Задача 2: Напишите программу, которая найдёт точку пересечения двух прямых, 
 заданных уравнениями y = k1 * x + b1, y = k2 * x + b2; 
 значения b1, k1, b2 и k2 задаются пользователем.
@@ -26,12 +26,12 @@ class H6T2
         }
         void RecognitionIntersectionPoint(double b1, double k1, double b2, double k2)
         {
-            if (IntersectionPoint(b1, k1, b2, k2) is null) Console.WriteLine("Прямые параллельны");
-            else
+            if (IntersectionPoint(b1, k1, b2, k2) is not null)
             {
                 double[] result = IntersectionPoint(b1, k1, b2, k2);
-                Console.Write($"Точка пересечения (x,y): ({result[0]:f2}, {result[1]:f2})");
+                Console.Write($"Точка пересечения (x,y): ({result[0]:f1}, {result[1]:f1})");
             }
+            else Console.WriteLine("Прямые параллельны");
         }
 
         void Output()
