@@ -14,10 +14,10 @@ class H7T2
         int[] UserInputArray(string message)                    //Ввод пользователем массива для индексации "матрицы"
         {
             Console.Write(message);
-            char[] SplitChar = new char[] { ',', ' ' }; 
+            char[] SplitChar = new char[] { ',', ' ' };
             int[] UserInput = Array.ConvertAll(Console.ReadLine().Split(SplitChar,
-                            StringSplitOptions.RemoveEmptyEntries), int.Parse);
-            if (UserInput.Length < 2) return UserInputArray(message);
+                               StringSplitOptions.RemoveEmptyEntries), int.Parse);
+            if (UserInput.Length < 2) return UserInputArray(message);                   // Не уверен, стоит ли так делать?
             else return UserInput;
         }
 
@@ -57,15 +57,15 @@ class H7T2
 
         void PrintByIndex(int[] indexArray, int[,] Matrix)      //Поиск и вывод индекса двумерного массива
         {
-             
-            if (Matrix.GetLength(0) < indexArray[0] || Matrix.GetLength(1) < indexArray[1] 
+
+            if (Matrix.GetLength(0) < indexArray[0] || Matrix.GetLength(1) < indexArray[1]
                                                     || indexArray[0] < 0 || indexArray[1] < 0)
                 Console.WriteLine($"{indexArray[0]}, {indexArray[1]}-> такого числа в массиве нет");
-            else 
-            Console.WriteLine($"{indexArray[0]}, {indexArray[1]} -> {Matrix[indexArray[0], indexArray[1]]}");
+            else
+                Console.WriteLine($"{indexArray[0]}, {indexArray[1]} -> {Matrix[indexArray[0], indexArray[1]]}");
         }
 
-        void Output()                                           //Фкнкция вывода
+        void Output()                                           //Функция вывода
         {
             int[,] Matrix = CreateMatrix(3, 3, -10, 10);
             PrintMatrix(Matrix);
