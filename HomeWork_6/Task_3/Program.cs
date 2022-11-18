@@ -6,74 +6,85 @@
 3 4 5
 3+5=8, 1+2+3=6, 8-6=2
 */
-
 class H6T3
 {
     public static void Main()
     {
-        int[,] CreateMatrix(int row, int column)
+        int[,] CreateMatrix(int column, int row)
         {
-            int[,] Array = new int[row, column];
-
-            for (int i = 0; i < Array.GetLength(0); i++)
+            int[,] Matrix = new int[row, column];
+            for (int i = 0; i < Matrix.GetLength(0); i++)
             {
-                for (int j = 0; j < Array.GetLength(1); j++)
+                for (int j = 0; j < Matrix.GetLength(1); j++)
                 {
-                    Array[i, j] = new Random().Next(1, 100);
+                    Matrix[i, j] = new Random().Next(1, 10);
                 }
-
             }
-            return Array;
+            return Matrix;
         }
 
-        void PrintMatrix(int[,] Array)
+        void PrintMatrix(int[,] Matrix)
         {
-            for (int i = 0; i < Array.GetLength(0); i++)
+            for (int i = 0; i < Matrix.GetLength(0); i++)
             {
-                for (int j = 0; j < Array.GetLength(1); j++)
+                for (int j = 0; j < Matrix.GetLength(1); j++)
                 {
-                    Console.Write($"{Array[i, j]} ");
+                    Console.Write(Matrix[i, j] + " ");
                 }
                 Console.WriteLine();
             }
         }
-        void PrintArr(int[] Array)
-        {
-            for (int i = 0; i < Array.Length; i++)
-            {
-                Console.Write($"{Array[i]} ");
-            }
-            Console.WriteLine();
-        }
 
-        void DiffMaxMin(int[,] Array)
+        int SumMaxArray(int[,] Matrix) // Сумма максимумов.
         {
-            //int max = Array[0, 0];
-
-            int[] maxArray = new int[Array.GetLength(0)];
-            for (int i = 0; i < Array.GetLength(0); i++) //name.GetLength(0) - возвращает количество строк в матрице
+            int sum = 0;
+            for (int j = 0; j < Matrix.GetLength(0); j++)
             {
-                for (int j = 0; j < maxArray.Length; j++)
+                int max = Matrix[j, 0];
+                for (int i = 0; i < Matrix.GetLength(1); i++)
                 {
-                    if (maxArray[j] < Array[0, i]) maxArray[0] = Array[0, i];
+                    if (max < Matrix[j, i])
+                    {
+                        max = Matrix[j, i];
+                    }
                 }
-                
-                
-                
-                
-
+                sum += max;
             }
-            PrintArr(maxArray);
-
+            return sum;
         }
 
+        int SumMinArray(int[,] Matrix) // Сумма минимумов.
+        {
+            int sum = 0;
+            for (int j = 0; j < Matrix.GetLength(1); j++)
+            {
+                int min = Matrix[0, j];
+                for (int i = 0; i < Matrix.GetLength(0); i++)
+                {
+                    if (min > Matrix[i, j])
+                    {
+                        min = Matrix[i, j];
+                    }
+                }
+                sum += min;
+            }
+            return sum;
+        }
 
-        int row = 3;
-        int column = 3;
-        int[,] Array = CreateMatrix(row, column);
-        PrintMatrix(Array);
-        Console.WriteLine();
-        DiffMaxMin(Array);
+        int DiffMaxMin(int[,] Matrix)
+        {
+            return SumMaxArray(Matrix) - SumMinArray(Matrix);
+        }
 
+        void Output()
+        {
+            int[,] Matrix = CreateMatrix(4, 4);
+            PrintMatrix(Matrix);
+            Console.WriteLine("Sum Max: " + SumMaxArray(Matrix));
+            Console.WriteLine("Sum Min: " + SumMinArray(Matrix));
+            Console.WriteLine("Diff MaxMin:" + DiffMaxMin(Matrix));
+        }
+
+        Output();
     }
 }
