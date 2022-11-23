@@ -15,8 +15,8 @@ namespace HomeWork8
         public static void Main()
         {
             Console.Clear();
-            int[,] matrixA = CreateMatrix(3, 3);
-            int[,] matrixB = CreateMatrix(3, 3);
+            int[,] matrixA = CreateMatrix(3, 2);
+            int[,] matrixB = CreateMatrix(2, 3);
             PrintMatrix(matrixA);
             Console.WriteLine("---");
             PrintMatrix(matrixB);
