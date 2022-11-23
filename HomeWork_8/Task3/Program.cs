@@ -6,7 +6,6 @@
 18 20
 15 18
 */
-using System.Diagnostics;
 
 namespace HomeWork8
 {
