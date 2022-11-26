@@ -12,8 +12,29 @@ namespace HomeWork9
     {
         public static void Main()
         {
-
+            int m = UserInput("M: "),
+                n = UserInput("N: ");
+            Console.Write($"M = {m}; N = {n} -> ");
+            Console.Write(SumInBeetween(m, n));
         }
-        
+
+        public static int UserInput(string message)
+        {
+            Console.Write(message);
+            return int.Parse(Console.ReadLine());
+        }
+
+        public static int SumInBeetween(int m, int n, int sum = 0)
+        {
+            if (m <= n)
+            {
+                sum += m;
+                return SumInBeetween(m + 1, n, sum);
+            }
+            else
+            {
+                return sum;
+            }
+        }
     }
 }
