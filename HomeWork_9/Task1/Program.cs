@@ -12,8 +12,31 @@ namespace HomeWork9
     {
         public static void Main()
         {
+            int m = UserInput("M: "),
+                n = UserInput("N: ");
+            Console.Write($"M = {m}; N = {n} -> ");
+            PrintingEvenNumbers(m, n);
+
 
         }
-        
+
+        public static int UserInput(string message)
+        {
+            Console.Write(message);
+            return int.Parse(Console.ReadLine());
+        }
+
+        public static void PrintingEvenNumbers(int m, int n)
+        {
+            if (m > n)
+            {
+                return;
+            }
+            if (m % 2 == 0) Console.Write($"{m} ");
+            
+            PrintingEvenNumbers(m + 1, n);
+            
+        }
+
     }
 }
