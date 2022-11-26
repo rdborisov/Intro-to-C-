@@ -12,8 +12,28 @@ namespace HomeWork9
     {
         public static void Main()
         {
-
+            int m = UserInput("M: "),
+                n = UserInput("N: ");
+            Console.Write($"M = {m}; N = {n} -> ");
+            Console.Write(Akkerman(m, n));
         }
-        
+
+        public static int UserInput(string message)
+        {
+            Console.Write(message);
+            return int.Parse(Console.ReadLine());
+        }
+
+        public static int Akkerman(int m, int n)
+        {
+            if (m == 0)
+                return n + 1;
+            else
+              if ((m != 0) && (n == 0))
+                return Akkerman(m - 1, 1);
+            else
+                return Akkerman(m - 1, Akkerman(m, n - 1));
+        }
+
     }
 }
