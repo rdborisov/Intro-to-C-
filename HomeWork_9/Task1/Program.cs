@@ -15,7 +15,7 @@ namespace HomeWork9
             int m = UserInput("M: "),
                 n = UserInput("N: ");
             Console.Write($"M = {m}; N = {n} -> ");
-            PrintingEvenNumbers(m, n);
+            PrintEvenNumbers(m, n);
 
 
         }
@@ -26,16 +26,17 @@ namespace HomeWork9
             return int.Parse(Console.ReadLine());
         }
 
-        public static void PrintingEvenNumbers(int m, int n)
-        {
-            if (m > n)
+        public static void PrintEvenNumbers(int m, int n)
+        { 
+            if (m <= n) 
             {
-                return;
+                if (m % 2 == 0) 
+                {
+                    Console.Write($"{m} ");
+                }
             }
-            if (m % 2 == 0) Console.Write($"{m} ");
-            
-            PrintingEvenNumbers(m + 1, n);
-            
+            else return;
+            PrintEvenNumbers(m + 1, n);
         }
 
     }
